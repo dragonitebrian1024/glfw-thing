@@ -55,9 +55,9 @@ void Texture::texUnit(Shader& shader, const char* uniform, GLuint unit)
 	// Gets the location of the uniform
 	GLuint texUni = glGetUniformLocation(shader.ID, uniform);
 	std::cout << glGetError() << std::endl;
-	GLint vertexUVID = glGetAttribLocation(shader.ID, uniform);
-	if (vertexUVID < 0)
-		std::cout << "vertexUVID not found ..." << std::endl;
+	GLint GetUniform = glGetAttribLocation(shader.ID, uniform);
+	if (GetUniform < 0)
+		std::cout << "the uniform not found ..." << std::endl;
 	// Shader needs to be activated before changing the value of a uniform
 	shader.Activate();
 	// Sets the value of the uniform
